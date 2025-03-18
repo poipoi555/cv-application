@@ -59,6 +59,11 @@ export default function Practical() {
             setFormValues((prevVals) => ({...prevVals, [field]: updatedVal}));
         }
     }
+
+    function deleteExperience(id) {
+        setExperiences(prevVals => prevVals.filter(exp => exp.id !== id));
+    }
+    
     
     return (
         <section>
@@ -82,7 +87,8 @@ export default function Practical() {
 
             <div style={{ padding: "12px" }}>
                 {experiences.map(experience => 
-                    <div key={experience.id} style={{ border: "1px solid gray", padding: "12px", backgroundColor: "#e2f8fb", margin: "8px" }}>
+                    <div key={experience.id} style={{ border: "1px solid gray", padding: "12px", backgroundColor: "#f4f4f4", margin: "8px" }}>
+                        <button class="x-button" onClick={() => deleteExperience(experience.id)}>X</button>
                         <div>Company Name: {experience.company}</div>
                         <div>Position at Company: {experience.position}</div>
                         <div>Date: {experience.startDate} to {experience.endDate}</div>

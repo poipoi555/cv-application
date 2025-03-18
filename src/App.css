@@ -45,7 +45,7 @@
   display: flex;
   flex-direction: column;
   margin: 8px;
-  border: 1px solid black;
+  box-shadow: 0 0 8px gainsboro;
   width: 120vh;
 }
 
@@ -69,7 +69,7 @@ section {
 }
 
 .form {
-  background-color: "#effeff";
+  background-color: "#f4f4f4";
   margin-top: 18px; 
   box-sizing: border-box;
   padding: 18px;
@@ -93,4 +93,11 @@ section {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.x-button {
+  background-color: transparent; 
+  border: none; 
+  color: black; 
+  font-size: 14px;
 }

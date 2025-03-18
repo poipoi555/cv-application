@@ -21,7 +21,7 @@ export default function Education() {
 
         if (Object.keys(errors).length === 0) {
             setIsEdit(false);
-            setEducations([...educations, { id: nextId++, school: formValues.school, title: formValues.title, startDate: formValues.start, endDate: formValues.end }
+            setEducations([...educations, { id: nextId.current++, school: formValues.school, title: formValues.title, startDate: formValues.start, endDate: formValues.end }
             ]);
         }
     }
@@ -46,6 +46,11 @@ export default function Education() {
     function updateForm(field, updatedVal) {
         setFormValues((prevVals) => ({...prevVals, [field]: updatedVal}));
     }
+
+    function deleteEducation(id) {
+        setEducations(prevVals => (prevVals.filter(edu => edu.id !== id)));
+    }
+    
     
     return (
         <section>
@@ -69,10 +74,15 @@ export default function Education() {
 
             <div style={{ padding: "12px" }}>
                 {educations.map(education => 
-                    <div key={education.id} style={{ border: "1px solid gray", padding: "12px", backgroundColor: "#e2f8fb", margin: "8px" }}>
-                        <div>School Name: {education.school}</div>
-                        <div>Title: {education.title}</div>
-                        <div>Date: {education.startDate} to {education.endDate}</div>
+                    <div key={education.id} style={{ 
+                        border: "1px solid gray", padding: "12px", backgroundColor: "#f4f4f4", margin: "8px",
+                        display: "flex", flexDirection: "row", gap: "270px" }}>
+                        <button class="x-button" onClick={() => deleteEducation(education.id)}>X</button>
+                        <div className="others">
+                            <div>School Name: {education.school}</div>
+                            <div>Title: {education.title}</div>
+                            <div>Date: {education.startDate} to {education.endDate}</div>
+                        </div>
                     </div>
                 )}
             </div>

@@ -6,7 +6,7 @@ import './App.css'
 function App() {
   return (
     <div className="main">
-      <h2 className="title" style={{ backgroundColor: "#e6fdff", margin: "0", padding: "12px" }}>CV</h2>
+      <h2 className="title" style={{ backgroundColor: "#f4f4f4", margin: "0", padding: "12px" }}>CV</h2>
       <General />
       <Education />
       <Practical />
