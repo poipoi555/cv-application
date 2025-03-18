@@ -31,9 +31,13 @@ export default function General() {
     
     return (
         <section>
-            <h3>General Information</h3>
-            <button onClick={openForm}>Edit</button>
-            <button onClick={closeForm}>Submit</button>
+            <div className="head">
+                <h2 className="header">General Information</h2>
+                <div className="buttons">
+                    <button onClick={openForm}>Edit</button>
+                    <button onClick={closeForm}>Submit</button>
+                </div>
+            </div>
             <hr />
             {isEdit && <GeneralEdit 
                             countryCodes={countryCodes} 
@@ -41,12 +45,13 @@ export default function General() {
                             updateForm={updateForm}
                         />}
             {!isEdit && 
-                <div>
+                <div style={{ padding: "12px" }}>
                     <div>Name: {formValues.name}</div>
                     <div>Email: {formValues.email}</div>
                     <div>Phone Number: {formValues.phoneNo}</div>
                 </div>
             }
+            <hr color="lightgray" />
         </section>
     );
 }

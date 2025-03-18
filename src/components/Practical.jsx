@@ -62,9 +62,13 @@ export default function Practical() {
     
     return (
         <section>
-            <h3>Practical Experience</h3>
-            <button onClick={openForm}>Create</button>
-            <button onClick={closeForm}>Submit</button>
+            <div className="head">
+                <h2 className="header">Practical Experience</h2>
+                <div className="buttons">
+                    <button onClick={openForm}>Create</button>
+                    <button onClick={closeForm}>Submit</button>
+                </div>
+            </div>
             <hr />
             {isEdit && <PracticalEdit 
                             formValues={formValues}
@@ -76,22 +80,25 @@ export default function Practical() {
                 )}
             </div>
 
-            <div>
+            <div style={{ padding: "12px" }}>
                 {experiences.map(experience => 
-                    <div key={experience.id} style={{ border: "1px solid gray" }}>
+                    <div key={experience.id} style={{ border: "1px solid gray", padding: "12px", backgroundColor: "#e2f8fb", margin: "8px" }}>
                         <div>Company Name: {experience.company}</div>
                         <div>Position at Company: {experience.position}</div>
                         <div>Date: {experience.startDate} to {experience.endDate}</div>
                         <div>Key Responsibilities: 
-                            <ul>
-                                {experience.expResps.map(x => 
-                                    <li>{x.responsibility}</li>
-                                )}
-                            </ul>
+                            <div className="list">
+                                <ul>
+                                    {experience.expResps.map(x => 
+                                        <li>{x.responsibility}</li>
+                                    )}
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 )}
             </div>
+            <hr color="lightgray" />
         </section>
     );
 }

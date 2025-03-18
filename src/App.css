@@ -40,3 +40,57 @@
 .read-the-docs {
   color: #888;
 }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+  border: 1px solid black;
+  width: 120vh;
+}
+
+button {
+  width: 60px;
+  height: 40px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(84, 84, 255);
+  color: white;
+}
+
+section {
+  padding: 12px;
+}
+
+.header {
+  margin-bottom: 7px;
+}
+
+.form {
+  background-color: "#effeff";
+  margin-top: 18px; 
+  box-sizing: border-box;
+  padding: 18px;
+  width: 100%;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  margin: 12px;
+  gap: 12px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

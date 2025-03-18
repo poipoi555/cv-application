@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import General from './components/General.jsx'
 import Education from './components/Education.jsx'
 import Practical from './components/Practical.jsx'
@@ -6,8 +5,8 @@ import './App.css'
 
 function App() {
   return (
-    <div>
-      <h1>My CV Application</h1>
+    <div className="main">
+      <h2 className="title" style={{ backgroundColor: "#e6fdff", margin: "0", padding: "12px" }}>CV</h2>
       <General />
       <Education />
       <Practical />

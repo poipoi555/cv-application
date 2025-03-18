@@ -49,9 +49,13 @@ export default function Education() {
     
     return (
         <section>
-            <h3>Educational Information</h3>
-            <button onClick={openForm}>Create</button>
-            <button onClick={closeForm}>Submit</button>
+            <div className="head">
+                <h2 className="header">Educational Information</h2>
+                <div className="buttons">
+                    <button onClick={openForm}>Create</button>
+                    <button onClick={closeForm}>Submit</button>
+                </div>
+            </div>
             <hr />
             {isEdit && <EducationEdit 
                             formValues={formValues}
@@ -63,15 +67,16 @@ export default function Education() {
                 )}
             </div>
 
-            <div>
+            <div style={{ padding: "12px" }}>
                 {educations.map(education => 
-                    <div key={education.id} style={{ border: "1px solid gray" }}>
+                    <div key={education.id} style={{ border: "1px solid gray", padding: "12px", backgroundColor: "#e2f8fb", margin: "8px" }}>
                         <div>School Name: {education.school}</div>
                         <div>Title: {education.title}</div>
                         <div>Date: {education.startDate} to {education.endDate}</div>
                     </div>
                 )}
             </div>
+            <hr color="lightgray" />
         </section>
     );
 }
